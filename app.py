@@ -235,10 +235,10 @@ st.markdown("""
 PHOTOS = [
     {
         "id": 1,
-        "url": "https://images.unsplash.com/photo-1495562569060-2eec283d3391?w=600&q=80",
-        "caption": "Morning Coffee Ritual",
-        "category": "Daily Life",
-        "description": "The quiet ceremony of a slow morning — steam rising, light just arriving through the kitchen window.",
+        "url": "Japan.jpg",
+        "caption": "A Magical Day at Disneyland",
+        "category": "Travel",
+        "description": "A joyful moment captured at Disneyland filled with excitement, laughter, and unforgettable memories.",
     },
     {
         "id": 2,
