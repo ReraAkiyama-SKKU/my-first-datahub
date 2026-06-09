@@ -235,7 +235,7 @@ st.markdown("""
 PHOTOS = [
     {
         "id": 1,
-        "url": "Japan.jpg",
+        "url": "Japan.JPG",
         "caption": "A Magical Day at Disneyland",
         "category": "Travel",
         "description": "A joyful moment captured at Disneyland filled with excitement, laughter, and unforgettable memories.",
