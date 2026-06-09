@@ -238,6 +238,8 @@ PHOTOS = [
         "url": "Japan.JPG",
         "caption": "A Magical Day at Disneyland",
         "category": "Travel",
+        "event": "Disneyland",
+        "date": "2024-12-17",
         "description": "A joyful moment captured at Disneyland filled with excitement, laughter, and unforgettable memories.",
     },
     {
@@ -266,6 +268,8 @@ PHOTOS = [
         "url": "Korea.JPG",
         "caption": "Evening by the Han River",
         "category": "Daily Life",
+        "event": "Han River Evening",
+        "date": "2023-08-23",
         "description": "A peaceful moment spent along the Han River.",
     },
     {
