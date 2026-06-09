@@ -271,7 +271,7 @@ PHOTOS = [
     },
     {
     "id": 5,
-    "url": "Japan summer2.JPG",
+    "url": "Japan summer1.JPG",
     "caption": "Japanese Summer",
     "category": "Travel",
     "location": "Japan",
@@ -280,7 +280,7 @@ PHOTOS = [
     },
     {
     "id": 6,
-    "url": "Japan summer1.JPG",
+    "url": "Japan summer2.JPG",
     "caption": "Japanese Summer",
     "category": "Travel",
     "location": "Japan",
