@@ -238,7 +238,7 @@ PHOTOS = [
         "url": "Japan.JPG",
         "caption": "A Magical Day at Disneyland",
         "category": "Travel",
-        "event": "Disneyland",
+        "location": "Disneyland",
         "date": "2024-12-17",
         "description": "A joyful moment captured at Disneyland filled with excitement, laughter, and unforgettable memories.",
     },
@@ -247,7 +247,7 @@ PHOTOS = [
     "url": "Jeongseon1.JPG",
     "caption": "Morning in Jeongseon",
     "category": "Travel",
-    "event": "Jeongseon Trip",
+    "location": "Jeongseon Trip",
     "date": "2025-07-04",
     "description": "The peaceful scenery of Jeongseon welcomed us with fresh air and quiet beauty.",
     },
@@ -256,7 +256,7 @@ PHOTOS = [
     "url": "Jeongseon2.JPG",
     "caption": "A Taste of Jeongseon",
     "category": "Travel",
-    "event": "Jeongseon Trip",
+    "location": "Jeongseon Trip",
     "date": "2025-07-04",
     "description": "Trying Jeongseon's traditional dish, Kkotdeungchigi, became one of the most memorable parts of the trip.",
     },
@@ -265,7 +265,7 @@ PHOTOS = [
     "url": "Jeongseon3.jpeg",
     "caption": "A Curious Encounter",
     "category": "Travel",
-    "event": "Jeongseon Trip",
+    "location": "Jeongseon Trip",
     "date": "2025-07-04",
     "description": "A small encounter with a curious cat became one of the warmest memories from the trip.",
     },
@@ -274,7 +274,7 @@ PHOTOS = [
 ALL_CATEGORIES = ["All", "Daily Life", "Travel", "Nature", "Mood"]
 
 # All event options including "All"
-ALL_EVENTS = ["All"] + sorted(set(p["event"] for p in PHOTOS))
+ALL_EVENTS = ["All"] + sorted(set(p["location"] for p in PHOTOS))
 
 
 # ─────────────────────────────────────────────
@@ -328,8 +328,8 @@ st.markdown('<div class="section-title">Your Collection</div>', unsafe_allow_htm
 # ── Category filter pills ──
 # We use one button per category and highlight the active one with different styling
 st.markdown("**Filter by category:**")
-selected_event = st.selectbox(
-    "Filter by memory:",
+selected_location = st.selectbox(
+    "Filter by location:",
     ALL_EVENTS
 )
 cols_filter = st.columns(len(ALL_CATEGORIES))
@@ -354,10 +354,10 @@ if st.session_state.selected_category != "All":
         if p["category"] == st.session_state.selected_category
     ]
 
-if selected_event != "All":
+if selected_location != "All":
     filtered = [
         p for p in filtered
-        if p["event"] == selected_event
+        if p["location"] == selected_event
     ]
 
 # ── Render 3-column photo grid ──
