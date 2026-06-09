@@ -269,6 +269,15 @@ PHOTOS = [
     "date": "2025-07-04",
     "description": "A small encounter with a curious cat became one of the warmest memories from the trip.",
     },
+    {
+    "id": 5,
+    "url": "Japan summer1.JPG",
+    "caption": "Japanese Summer",
+    "category": "Travel",
+    "location": "Japan",
+    "date": "2025-8-09",
+    "description": "Summer vacation in Japan with a shaved ice stand and a hanging banner showing the word 'kori'. Bright and lively street scene with a refreshing summer mood.",
+    },
 ]
 # All category options including "All"
 ALL_CATEGORIES = ["All", "Daily Life", "Travel", "Nature", "Mood"]
