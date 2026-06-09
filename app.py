@@ -247,6 +247,8 @@ PHOTOS = [
         "url": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&q=80",
         "caption": "Lake District Dusk",
         "category": "Travel",
+        "event": "Han River Evening",
+        "date": "2023-08-23",
         "description": "A still evening on the water somewhere north of the usual path. The kind of place that makes you want to stay.",
     },
     {
@@ -254,6 +256,8 @@ PHOTOS = [
         "url": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80",
         "caption": "Through the Forest",
         "category": "Nature",
+        "event": "Han River Evening",
+        "date": "2023-08-23",
         "description": "Light filtered through old-growth canopy — the forest quiet except for birds and the occasional falling leaf.",
     },
     {
@@ -261,6 +265,8 @@ PHOTOS = [
         "url": "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=600&q=80",
         "caption": "Golden Hour Feeling",
         "category": "Mood",
+        "event": "Han River Evening",
+        "date": "2023-08-23",
         "description": "That particular warmth just before sunset when everything turns briefly amber and still.",
     },
     {
@@ -277,6 +283,8 @@ PHOTOS = [
         "url": "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=600&q=80",
         "caption": "Alpine Meadow",
         "category": "Nature",
+        "event": "Han River Evening",
+        "date": "2023-08-23",
         "description": "Wildflowers at altitude, impossibly bright against the grey-blue of distant rock.",
     },
     {
@@ -284,6 +292,8 @@ PHOTOS = [
         "url": "https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?w=600&q=80",
         "caption": "Kyoto Side Street",
         "category": "Travel",
+        "event": "Han River Evening",
+        "date": "2023-08-23",
         "description": "A lantern-lit alley in the old quarter, rain-damp cobblestones reflecting soft orange light.",
     },
     {
@@ -291,6 +301,8 @@ PHOTOS = [
         "url": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=600&q=80",
         "caption": "Late Afternoon Blue",
         "category": "Mood",
+        "event": "Han River Evening",
+        "date": "2023-08-23",
         "description": "The colour of a room in late winter light — not sadness exactly, but something thoughtful and close.",
     },
     {
@@ -298,6 +310,8 @@ PHOTOS = [
         "url": "https://images.unsplash.com/photo-1471879832106-c7ab9e0cee23?w=600&q=80",
         "caption": "Market Day",
         "category": "Daily Life",
+        "event": "Han River Evening",
+        "date": "2023-08-23",
         "description": "Saturday morning, baskets full, strangers briefly neighbours over tomatoes and fresh bread.",
     },
 ]
