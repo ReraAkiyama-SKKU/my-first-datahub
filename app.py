@@ -374,6 +374,10 @@ st.markdown('<div class="section-title">Your Collection</div>', unsafe_allow_htm
 # ── Category filter pills ──
 # We use one button per category and highlight the active one with different styling
 st.markdown("**Filter by category:**")
+selected_event = st.selectbox(
+    "Filter by memory:",
+    ALL_EVENTS
+)
 cols_filter = st.columns(len(ALL_CATEGORIES))
 
 for i, category in enumerate(ALL_CATEGORIES):
@@ -388,11 +392,19 @@ st.caption(f"Showing: **{st.session_state.selected_category}**")
 st.markdown('<hr class="thin-rule">', unsafe_allow_html=True)
 
 # ── Filter photos by selected category ──
-filtered = (
-    PHOTOS
-    if st.session_state.selected_category == "All"
-    else [p for p in PHOTOS if p["category"] == st.session_state.selected_category]
-)
+filtered = PHOTOS
+
+if st.session_state.selected_category != "All":
+    filtered = [
+        p for p in filtered
+        if p["category"] == st.session_state.selected_category
+    ]
+
+if selected_event != "All":
+    filtered = [
+        p for p in filtered
+        if p["event"] == selected_event
+    ]
 
 # ── Render 3-column photo grid ──
 # We group photos into rows of 3
