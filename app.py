@@ -250,7 +250,7 @@ PHOTOS = [
     "event": "Jeongseon Trip",
     "date": "2025-07-04",
     "description": "The peaceful scenery of Jeongseon welcomed us with fresh air and quiet beauty.",
-},
+    },
     {
     "id": 3,
     "url": "정선 여행2.jpg",
@@ -259,7 +259,7 @@ PHOTOS = [
     "event": "Jeongseon Trip",
     "date": "2025-07-05",
     "description": "Trying Jeongseon's traditional dish, Kkotdeungchigi, became one of the most memorable parts of the trip.",
-},
+    },
     {
     "id": 4,
     "url": "정선 여행3.jpg",
@@ -268,7 +268,7 @@ PHOTOS = [
     "event": "Jeongseon Trip",
     "date": "2025-07-04",
     "description": "A small encounter with a curious cat became one of the warmest memories from the trip.",
-},
+    },
     {
         "id": 5,
         "url": "Korea.JPG",
