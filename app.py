@@ -305,6 +305,9 @@ PHOTOS = [
 # All category options including "All"
 ALL_CATEGORIES = ["All", "Daily Life", "Travel", "Nature", "Mood"]
 
+# All event options including "All"
+ALL_EVENTS = ["All"] + sorted(set(p["event"] for p in PHOTOS))
+
 
 # ─────────────────────────────────────────────
 # SESSION STATE
