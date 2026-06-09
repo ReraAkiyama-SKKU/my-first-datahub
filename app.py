@@ -357,7 +357,7 @@ if st.session_state.selected_category != "All":
 if selected_location != "All":
     filtered = [
         p for p in filtered
-        if p["location"] == selected_event
+        if p["location"] == selected_location
     ]
 
 # ── Render 3-column photo grid ──
