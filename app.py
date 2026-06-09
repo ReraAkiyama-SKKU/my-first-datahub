@@ -293,7 +293,7 @@ PHOTOS = [
     "caption": "Colorful Summer Flowers",
     "category": "Nature",
     "location": "Japan",
-    "date": "2025-08-11"
+    "date": "2025-08-11",
     "description": "A natural scene filled with blooming flowers, mainly yellow and pink, under warm sunlight.",
     },
 ]
