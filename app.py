@@ -274,7 +274,7 @@ PHOTOS = [
         "url": "Korea.JPG",
         "caption": "Evening by the Han River",
         "category": "Daily Life",
-        "event": "Han River Evening",
+        "event": "Han River",
         "date": "2023-08-23",
         "description": "A peaceful moment spent along the Han River.",
     },
