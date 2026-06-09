@@ -269,7 +269,7 @@ PHOTOS = [
     "date": "2025-07-04",
     "description": "A small encounter with a curious cat became one of the warmest memories from the trip.",
     },
-
+]
 # All category options including "All"
 ALL_CATEGORIES = ["All", "Daily Life", "Travel", "Nature", "Mood"]
 
