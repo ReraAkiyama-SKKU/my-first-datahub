@@ -281,11 +281,11 @@ PHOTOS = [
     {
     "id": 6,
     "url": "Japan summer2.JPG",
-    "caption": "Japanese Summer",
+    "caption": "Summer Day in Enoshima",
     "category": "Travel",
     "location": "Japan",
     "date": "2025-8-09",
-    "description": "Summer vacation in Japan with a shaved ice stand and a hanging banner showing the word 'kori'. Bright and lively street scene with a refreshing summer mood.",
+    "description": "A traditional restaurant in Enoshima surrounded by soft sunlight through trees, creating a calm summer atmosphere.",
     },
 ]
 # All category options including "All"
