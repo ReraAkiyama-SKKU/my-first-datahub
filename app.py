@@ -244,7 +244,7 @@ PHOTOS = [
     },
     {
     "id": 2,
-    "url": "정선 여행1.JPG",
+    "url": "Jeongseon1.JPG",
     "caption": "Morning in Jeongseon",
     "category": "Travel",
     "event": "Jeongseon Trip",
@@ -253,7 +253,7 @@ PHOTOS = [
     },
     {
     "id": 3,
-    "url": "정선 여행2.jpg",
+    "url": "Jeongseon2.jpg",
     "caption": "A Taste of Jeongseon",
     "category": "Travel",
     "event": "Jeongseon Trip",
@@ -262,7 +262,7 @@ PHOTOS = [
     },
     {
     "id": 4,
-    "url": "정선 여행3.jpg",
+    "url": "Jeongseon3.jpg",
     "caption": "A Curious Encounter",
     "category": "Travel",
     "event": "Jeongseon Trip",
