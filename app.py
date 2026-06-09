@@ -263,10 +263,10 @@ PHOTOS = [
     },
     {
         "id": 5,
-        "url": "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=600&q=80",
-        "caption": "Corner Bookshop",
+        "url": "Korea.JPG",
+        "caption": "Evening by the Han River",
         "category": "Daily Life",
-        "description": "A small shop on a narrow street — floor-to-ceiling shelves, a cat asleep on the counter.",
+        "description": "A peaceful moment spent along the Han River.",
     },
     {
         "id": 6,
