@@ -328,8 +328,21 @@ if "selected_photo_id" not in st.session_state:
 if "user_photos" not in st.session_state:
     st.session_state.user_photos = []
 
+import json
+import os
+
+FAV_FILE = "favorites.json"
+
 if "favorites" not in st.session_state:
-    st.session_state.favorites = []
+    if os.path.exists(FAV_FILE):
+        with open(FAV_FILE, "r") as f:
+            st.session_state.favorites = json.load(f)
+    else:
+        st.session_state.favorites = []
+
+def save_favorites():
+    with open(FAV_FILE, "w") as f:
+        json.dump(st.session_state.favorites, f)
 
 # ─────────────────────────────────────────────
 # HERO SECTION
@@ -473,10 +486,12 @@ else:
                 if photo["id"] in st.session_state.favorites:
                     if st.button("💔 Remove Favorite", key=f"fav_{photo['id']}"):
                        st.session_state.favorites.remove(photo["id"])
+                       save_favorites()
                        st.rerun()
                 else:
                     if st.button("⭐ Favorite", key=f"fav_{photo['id']}"):
                         st.session_state.favorites.append(photo["id"])
+                        save_favorites()
                         st.rerun()
 
 
