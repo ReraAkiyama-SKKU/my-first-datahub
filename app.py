@@ -306,6 +306,15 @@ PHOTOS = [
     "date": "2025-11-02",
     "description": "Golden ginkgo trees glowing in the autumn sunlight at Sungkyunkwan University, creating a peaceful and timeless atmosphere."
     }
+    {
+    "id": 9,
+    "url": "cat1.jpeg",
+    "caption": "A Quiet Cat on the Stairs",
+    "category": "Nature",
+    "location": "Korea",
+    "date": "2026-10-23",
+    "description": "A calm cat sitting quietly on a staircase, observing its surroundings in a peaceful moment."
+},
 ]
 # All category options including "All"
 ALL_CATEGORIES = ["All", "Daily Life", "Travel", "Nature", "Mood"]
