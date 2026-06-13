@@ -308,7 +308,7 @@ if "selected_photo_id" not in st.session_state:
     st.session_state.selected_photo_id = None
 
 if "user_photos" not in st.session_state:
-    st.session_state.user_photos = saved_photos
+    st.session_state.user_photos = []
 
 if "favorites" not in st.session_state:
     st.session_state.favorites = []
