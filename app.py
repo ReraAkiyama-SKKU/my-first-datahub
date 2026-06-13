@@ -305,7 +305,7 @@ PHOTOS = [
     "location": "Korea",
     "date": "2025-11-02",
     "description": "Golden ginkgo trees glowing in the autumn sunlight at Sungkyunkwan University, creating a peaceful and timeless atmosphere."
-    }
+    },
     {
     "id": 9,
     "url": "cat1.jpeg",
