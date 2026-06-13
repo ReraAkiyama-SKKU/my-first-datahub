@@ -290,7 +290,7 @@ PHOTOS = [
     },
     {
     "id": 7,
-    "url": "fall_korea.jpeg",
+    "url": "fall_korea1.jpeg",
     "caption": "A Stroll Down Memory Lane",
     "category": "Mood",
     "location": "National Folk Museum of Korea",
