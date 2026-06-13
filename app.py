@@ -427,9 +427,14 @@ else:
                 if st.button("View ↗", key=f"view_{photo['id']}"):
                     st.session_state.selected_photo_id = photo["id"]
                 # Favorite button
-                if st.button("⭐ Favorite", key=f"fav_{photo['id']}"):
-                    if photo["id"] not in st.session_state.favorites:
+                if photo["id"] in st.session_state.favorites:
+                    if st.button("💔 Remove Favorite", key=f"fav_{photo['id']}"):
+                       st.session_state.favorites.remove(photo["id"])
+                       st.rerun()
+                else:
+                    if st.button("⭐ Favorite", key=f"fav_{photo['id']}"):
                         st.session_state.favorites.append(photo["id"])
+                        st.rerun()
 
 
 # ─────────────────────────────────────────────
