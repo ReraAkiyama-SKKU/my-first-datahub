@@ -366,7 +366,7 @@ uploaded_file = st.file_uploader(
 
 caption_input = st.text_input("Caption")
 category_input = st.selectbox("Category", ALL_CATEGORIES[1:])
-event_input = st.text_input("Location / Event")
+Location_input = st.text_input("Location")
 
 if st.button("Add Memory"):
     if uploaded_file:
