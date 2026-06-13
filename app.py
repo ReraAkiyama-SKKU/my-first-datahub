@@ -474,18 +474,16 @@ else:
 # PHOTO VIEWER
 # Shown only when a photo has been selected
 # ─────────────────────────────────────────────
-f st.session_state.selected_photo_id is not None:
-    # Find the selected photo dict by its id
+if st.session_state.selected_photo_id is not None:
     selected = next(
         (p for p in all_photos if p["id"] == st.session_state.selected_photo_id),
         None
-        )
+    )
 
     if selected:
         st.markdown('<hr class="thin-rule">', unsafe_allow_html=True)
         st.markdown('<div class="section-label">Selected Moment</div>', unsafe_allow_html=True)
 
-        # Two-column layout: large image on the left, details on the right
         left_col, right_col = st.columns([3, 2], gap="large")
 
         with left_col:
@@ -498,8 +496,7 @@ f st.session_state.selected_photo_id is not None:
                 f'<div class="viewer-desc">{selected["description"]}</div>',
                 unsafe_allow_html=True,
             )
-            st.markdown("")  # spacer
-            # Close / clear the viewer
+
             if st.button("✕ Close", key="close_viewer"):
                 st.session_state.selected_photo_id = None
                 st.rerun()
