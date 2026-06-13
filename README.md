@@ -1,16 +1,20 @@
 # Moments Archive
 
-A Streamlit-based web application that helps users organize and revisit their personal photo collections.
+A Streamlit web application for organizing and revisiting meaningful memories through photographs.
 
 ## Overview
-Moments Archive allows users to transform everyday photographs into meaningful visual archives. By categorizing images based on themes, moods, or memorable moments, users can easily explore and reconnect with their memories.
+Product Overview
+
+Moments Archive is a Streamlit-based web application designed to help users organize, revisit, and preserve meaningful memories through photographs. Rather than simply storing images, the application transforms personal photo collections into a curated archive that reflects the places, experiences, and moments that shape everyday life.
+
+Users can browse photos through an intuitive gallery interface, categorize them by themes and locations, enlarge selected images for a closer look, and save particularly meaningful moments using the favorites feature. By combining organization with emotional value, Moments Archive encourages users to reconnect with their memories in a more intentional and personalized way. 
 
 ## Features
-- Photo gallery display
-- Category filters (Daily Life, Travel, Nature, Mood)
-- Image enlargement
-- Captions and descriptions
-- Clean and intuitive user interface
+- Photo gallery
+- Category filtering
+- Location filtering
+- Favorites management
+- Photo viewer
 
 ## Technologies Used
 - Python
