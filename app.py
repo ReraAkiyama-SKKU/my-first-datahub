@@ -314,7 +314,16 @@ PHOTOS = [
     "location": "Korea",
     "date": "2026-10-23",
     "description": "A calm cat sitting quietly on a staircase, observing its surroundings in a peaceful moment."
-},
+    },
+    {
+    "id": 10,
+    "url": "fall_korea2.jpeg",
+    "caption": "Seoul Lights from Naksan Park",
+    "category": "Mood",
+    "location": "Korea",
+    "date": "2026-10-23",
+    "description": "A day time view of Seoul city lights seen from Naksan Park, showing the quiet contrast between nature and the glowing city."
+    },
 ]
 # All category options including "All"
 ALL_CATEGORIES = ["All", "Daily Life", "Travel", "Nature", "Mood"]
