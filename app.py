@@ -287,6 +287,15 @@ PHOTOS = [
     "date": "2025-8-09",
     "description": "A traditional restaurant in Enoshima surrounded by soft sunlight through trees, creating a calm summer atmosphere.",
     },
+    {
+    "id": 7,
+    "url": "fall_skku.jpeg",
+    "caption": "Golden Autumn at Sungkyunkwan",
+    "category": "Nature",
+    "location": "Sungkyunkwan University",
+    "date": "2025-11-02",
+    "description": "Golden ginkgo trees glowing in the autumn sunlight at Sungkyunkwan University, creating a peaceful and timeless atmosphere."
+}
 ]
 # All category options including "All"
 ALL_CATEGORIES = ["All", "Daily Life", "Travel", "Nature", "Mood"]
@@ -305,6 +314,9 @@ if "selected_category" not in st.session_state:
 
 if "selected_photo_id" not in st.session_state:
     st.session_state.selected_photo_id = None
+
+if "user_photos" not in st.session_state:
+    st.session_state.user_photos = []
 
 if "favorites" not in st.session_state:
     st.session_state.favorites = []
@@ -342,6 +354,33 @@ st.markdown("""
 # ─────────────────────────────────────────────
 # PHOTO GALLERY SECTION
 # ─────────────────────────────────────────────
+
+# ── Upload a new memory ──
+st.markdown('<div class="section-label">Upload</div>', unsafe_allow_html=True)
+st.markdown('<div class="section-title">Add a New Memory</div>', unsafe_allow_html=True)
+
+uploaded_file = st.file_uploader(
+    "Choose a photo",
+    type=["jpg", "jpeg", "png"]
+)
+
+caption_input = st.text_input("Caption")
+category_input = st.selectbox("Category", ALL_CATEGORIES[1:])
+event_input = st.text_input("Location / Event")
+
+if st.button("Add Memory"):
+    if uploaded_file:
+        st.session_state.user_photos.append({
+            "id": len(PHOTOS) + len(st.session_state.user_photos) + 1,
+            "url": uploaded_file,
+            "caption": caption_input,
+            "category": category_input,
+            "event": event_input,
+            "date": "2026",
+            "description": "Uploaded by the user.",
+        })
+        st.success("Memory added successfully!")
+        
 st.markdown('<div class="section-label">Gallery</div>', unsafe_allow_html=True)
 st.markdown('<div class="section-title">Your Collection</div>', unsafe_allow_html=True)
 
@@ -368,7 +407,10 @@ show_favorites = st.checkbox("⭐ Show Favorites Only")
 st.markdown('<hr class="thin-rule">', unsafe_allow_html=True)
 
 # ── Filter photos by selected category ──
-filtered = PHOTOS
+
+all_photos = PHOTOS + st.session_state.user_photos
+
+filtered = all_photos
 
 if st.session_state.selected_category != "All":
     filtered = [
@@ -434,9 +476,9 @@ else:
 # ─────────────────────────────────────────────
 if st.session_state.selected_photo_id is not None:
     # Find the selected photo dict by its id
-    selected = next(
-        (p for p in PHOTOS if p["id"] == st.session_state.selected_photo_id), None
-    )
+      selected = next(
+      (p for p in all_photos if p["id"] == st.session_state.selected_photo_id), None
+)
 
     if selected:
         st.markdown('<hr class="thin-rule">', unsafe_allow_html=True)
