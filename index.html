@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rera Akiyama — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0d0f12;
+      --surface:   #151820;
+      --card:      #1b1f2a;
+      --border:    #272c3a;
+      --accent1:   #c9a96e; /* warm gold — like a memory in amber */
+      --accent2:   #7b9cce; /* dusty blue — film grain sky */
+      --text:      #e8e4dc;
+      --muted:     #7a7f91;
+      --serif:     'DM Serif Display', Georgia, serif;
+      --sans:      'DM Sans', system-ui, sans-serif;
+      --mono:      'DM Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 5vw;
+      background: rgba(13,15,18,0.78);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      color: var(--accent1);
+      letter-spacing: 0.02em;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+
+    .nav-links a:hover { color: var(--accent1); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 0 5vw;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* film-grain overlay */
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(ellipse 70% 60% at 80% 50%, rgba(123,156,206,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 70% at 20% 70%, rgba(201,169,110,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* vertical film-strip lines — the signature element */
+    #hero::after {
+      content: '';
+      position: absolute;
+      top: 0; right: 8vw;
+      width: 1px;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent, var(--accent1), transparent);
+      opacity: 0.3;
+    }
+
+    .film-strip {
+      position: absolute;
+      top: 0; right: 6vw;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      height: 100%;
+      width: 40px;
+      opacity: 0.06;
+      pointer-events: none;
+    }
+
+    .film-hole {
+      width: 12px;
+      height: 18px;
+      border: 1px solid var(--accent1);
+      border-radius: 2px;
+      margin: 6px auto;
+      flex-shrink: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 700px;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-name {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-name em {
+      font-style: italic;
+      color: var(--accent1);
+    }
+
+    .hero-tagline {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--muted);
+      max-width: 480px;
+      margin-bottom: 2.6rem;
+      line-height: 1.65;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.85rem 2rem;
+      background: transparent;
+      border: 1px solid var(--accent1);
+      color: var(--accent1);
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.25s, color 0.25s, transform 0.2s;
+    }
+
+    .hero-cta:hover {
+      background: var(--accent1);
+      color: var(--bg);
+      transform: translateY(-2px);
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 7rem 5vw;
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 0.8rem;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 1.2rem;
+    }
+
+    .divider {
+      width: 48px;
+      height: 1px;
+      background: var(--accent1);
+      margin-bottom: 2.8rem;
+      opacity: 0.6;
+    }
+
+    /* ── ABOUT ── */
+    #about {
+      background: var(--surface);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+      max-width: 1100px;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+    }
+
+    .about-text p strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .about-aside {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+    }
+
+    .about-fact {
+      border-left: 2px solid var(--border);
+      padding-left: 1.2rem;
+      transition: border-color 0.25s;
+    }
+
+    .about-fact:hover { border-color: var(--accent1); }
+
+    .about-fact-label {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .about-fact-value {
+      font-size: 0.98rem;
+      color: var(--text);
+    }
+
+    /* ── PROJECTS ── */
+    #projects { background: var(--bg); }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.6rem;
+      max-width: 1100px;
+    }
+
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2.2rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+      cursor: default;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent1), var(--accent2));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(201,169,110,0.3);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+    }
+
+    .project-card:hover::before { transform: scaleX(1); }
+
+    .project-num {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--accent1);
+      letter-spacing: 0.1em;
+      margin-bottom: 1.4rem;
+      opacity: 0.7;
+    }
+
+    .project-title {
+      font-family: var(--serif);
+      font-size: 1.55rem;
+      color: var(--text);
+      margin-bottom: 0.9rem;
+      line-height: 1.2;
+    }
+
+    .project-desc {
+      color: var(--muted);
+      font-size: 0.93rem;
+      line-height: 1.7;
+      margin-bottom: 1.8rem;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      padding: 0.3rem 0.75rem;
+      background: rgba(123,156,206,0.1);
+      color: var(--accent2);
+      border: 1px solid rgba(123,156,206,0.2);
+      border-radius: 2px;
+    }
+
+    /* ── SKILLS ── */
+    #skills { background: var(--surface); }
+
+    .skills-layout {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      max-width: 1100px;
+      align-items: start;
+    }
+
+    .skills-intro {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 1rem;
+    }
+
+    .skill-pill {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      padding: 0.9rem 1.1rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      font-size: 0.88rem;
+      color: var(--text);
+      font-weight: 400;
+      transition: border-color 0.25s, transform 0.2s;
+    }
+
+    .skill-pill:hover {
+      border-color: var(--accent1);
+      transform: translateY(-2px);
+    }
+
+    .skill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent1);
+      flex-shrink: 0;
+    }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--bg); }
+
+    .contact-inner {
+      max-width: 640px;
+    }
+
+    .contact-body {
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      margin-bottom: 2.8rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      padding: 1.2rem 1.6rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color 0.25s, transform 0.2s, background 0.25s;
+    }
+
+    .contact-link:hover {
+      border-color: var(--accent1);
+      background: rgba(201,169,110,0.05);
+      transform: translateX(6px);
+    }
+
+    .contact-link-icon {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: var(--accent1);
+      text-transform: uppercase;
+      min-width: 60px;
+    }
+
+    .contact-link-text {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .contact-link-arrow {
+      margin-left: auto;
+      color: var(--accent1);
+      opacity: 0;
+      transform: translateX(-6px);
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .contact-link:hover .contact-link-arrow {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2.2rem 5vw;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-name {
+      font-family: var(--serif);
+      font-size: 1rem;
+      color: var(--accent1);
+    }
+
+    .footer-note {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav-links { gap: 1.4rem; }
+      .nav-links a { font-size: 0.7rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.4rem; }
+      .skills-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .film-strip { display: none; }
+      section { padding: 5rem 5vw; }
+    }
+
+    @media (max-width: 480px) {
+      .nav-links { gap: 1rem; }
+      .hero-name { font-size: 2.6rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="#hero">Rera Akiyama</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <!-- Decorative film strip -->
+    <div class="film-strip" aria-hidden="true">
+      <div class="film-hole"></div><div class="film-hole"></div><div class="film-hole"></div>
+      <div class="film-hole"></div><div class="film-hole"></div><div class="film-hole"></div>
+      <div class="film-hole"></div><div class="film-hole"></div><div class="film-hole"></div>
+      <div class="film-hole"></div><div class="film-hole"></div><div class="film-hole"></div>
+      <div class="film-hole"></div><div class="film-hole"></div><div class="film-hole"></div>
+      <div class="film-hole"></div><div class="film-hole"></div><div class="film-hole"></div>
+      <div class="film-hole"></div><div class="film-hole"></div><div class="film-hole"></div>
+      <div class="film-hole"></div><div class="film-hole"></div><div class="film-hole"></div>
+    </div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">Film, TV &amp; Multimedia · Sungkyunkwan University</p>
+      <h1 class="hero-name">Rera<br /><em>Akiyama</em></h1>
+      <p class="hero-tagline">
+        Storyteller and creative technologist designing experiences that help people preserve and reconnect with meaningful memories.
+      </p>
+      <a class="hero-cta" href="#projects">View Projects ↓</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="section-label">About Me</p>
+        <h2 class="section-title">Memory as medium.</h2>
+        <div class="divider"></div>
+        <p>
+          I'm a Film, TV &amp; Multimedia student at <strong>Sungkyunkwan University</strong> with a deep interest in storytelling, interactive experiences, and digital archives.
+        </p>
+        <p>
+          Through creative technology, I design experiences that bridge the gap between <strong>past and present</strong> — helping people revisit what matters most. My work sits at the intersection of cinema, code, and memory.
+        </p>
+      </div>
+      <div class="about-aside">
+        <div class="about-fact">
+          <p class="about-fact-label">University</p>
+          <p class="about-fact-value">Sungkyunkwan University, Seoul</p>
+        </div>
+        <div class="about-fact">
+          <p class="about-fact-label">Major</p>
+          <p class="about-fact-value">Film, TV &amp; Multimedia</p>
+        </div>
+        <div class="about-fact">
+          <p class="about-fact-label">Focus Areas</p>
+          <p class="about-fact-value">Interactive storytelling, digital archives, creative technology</p>
+        </div>
+        <div class="about-fact">
+          <p class="about-fact-label">Based in</p>
+          <p class="about-fact-value">Seoul, South Korea</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <p class="section-label">Projects</p>
+    <h2 class="section-title">Things I've made.</h2>
+    <div class="divider"></div>
+    <div class="projects-grid">
+
+      <article class="project-card">
+        <p class="project-num">01 — Web Application</p>
+        <h3 class="project-title">Moments Archive</h3>
+        <p class="project-desc">
+          A photo archiving web application that helps users organize, filter, and revisit meaningful memories through interactive features. Designed around the idea that every photograph is a window back in time.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Streamlit</span>
+          <span class="tag">GitHub</span>
+          <span class="tag">HTML/CSS</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="skills-layout">
+      <div>
+        <p class="section-label">Skills</p>
+        <h2 class="section-title">Tools of the craft.</h2>
+        <div class="divider"></div>
+        <p class="skills-intro">
+          A mix of code, design, and film production tools — each one a way of shaping how a story is told or a memory is kept.
+        </p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-pill"><span class="skill-dot"></span>Python</div>
+        <div class="skill-pill"><span class="skill-dot"></span>Streamlit</div>
+        <div class="skill-pill"><span class="skill-dot"></span>GitHub</div>
+        <div class="skill-pill"><span class="skill-dot"></span>HTML</div>
+        <div class="skill-pill"><span class="skill-dot"></span>CSS</div>
+        <div class="skill-pill"><span class="skill-dot"></span>Canva</div>
+        <div class="skill-pill"><span class="skill-dot"></span>Premiere Pro</div>
+        <div class="skill-pill"><span class="skill-dot"></span>Photoshop</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-inner">
+      <p class="section-label">Contact</p>
+      <h2 class="section-title">Let's connect.</h2>
+      <div class="divider"></div>
+      <p class="contact-body">
+        Whether it's a collaboration, a creative project, or just a conversation about memory and media — I'd love to hear from you.
+      </p>
+      <div class="contact-links">
+        <a class="contact-link" href="https://github.com/ReraAkiyama-SKKU/my-first-datahub" target="_blank" rel="noopener">
+          <span class="contact-link-icon">GitHub</span>
+          <span class="contact-link-text">ReraAkiyama-SKKU / my-first-datahub</span>
+          <span class="contact-link-arrow">→</span>
+        </a>
+        <a class="contact-link" href="mailto:lovresoo04@gmail.com">
+          <span class="contact-link-icon">Email</span>
+          <span class="contact-link-text">lovresoo04@gmail.com</span>
+          <span class="contact-link-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-name">Rera Akiyama</span>
+    <span class="footer-note">Film · Technology · Memory</span>
+  </footer>
+
+</body>
+</html>
