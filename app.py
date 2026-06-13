@@ -326,8 +326,8 @@ PHOTOS = [
     },
     {
     "id": 11,
-    "url": "Disney_Walt_Castle.jpg",
-    "caption": "IMG_3250.JPG",
+    "url": "IMG_3250.JPG",
+    "caption": "Disney_Walt_Castle",
     "category": "Travel",
     "location": "Disneyland",
     "date": "2025-8-11",
