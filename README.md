@@ -41,7 +41,7 @@ Users can add or remove favorite photographs.
 - Favorites-Only View
 Users can quickly access the memories they value most.
 
-## Futer Improvements
+## Future Improvements
 
 - Search functionality for locating specific photographs.
 
