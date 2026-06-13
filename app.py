@@ -288,6 +288,24 @@ PHOTOS = [
     "date": "2025-8-09",
     "description": "A traditional restaurant in Enoshima surrounded by soft sunlight through trees, creating a calm summer atmosphere.",
     },
+    {
+    "id": 7,
+    "url": "fall_korea.jpeg",
+    "caption": "A Stroll Down Memory Lane",
+    "category": "Mood",
+    "location": "National Folk Museum of Korea",
+    "date": "2025-09-15",
+    "description": "A retro street inside the National Folk Museum of Korea, filled with old-fashioned shops and nostalgic atmosphere like a traditional candy store."
+    },
+    {
+    "id": 8,
+    "url": "fall_skku.jpeg",
+    "caption": "Golden Autumn at Sungkyunkwan",
+    "category": "Nature",
+    "location": "Sungkyunkwan University",
+    "date": "2025-11-02",
+    "description": "Golden ginkgo trees glowing in the autumn sunlight at Sungkyunkwan University, creating a peaceful and timeless atmosphere."
+    }
 ]
 # All category options including "All"
 ALL_CATEGORIES = ["All", "Daily Life", "Travel", "Nature", "Mood"]
