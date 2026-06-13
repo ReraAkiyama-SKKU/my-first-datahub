@@ -287,15 +287,6 @@ PHOTOS = [
     "date": "2025-8-09",
     "description": "A traditional restaurant in Enoshima surrounded by soft sunlight through trees, creating a calm summer atmosphere.",
     },
-    {
-    "id": 7,
-    "url": "IMG_3188.jpeg",
-    "caption": "Colorful Summer Flowers",
-    "category": "Nature",
-    "location": "Japan",
-    "date": "2025-08-11",
-    "description": "A natural scene filled with blooming flowers, mainly yellow and pink, under warm sunlight.",
-    },
 ]
 # All category options including "All"
 ALL_CATEGORIES = ["All", "Daily Life", "Travel", "Nature", "Mood"]
