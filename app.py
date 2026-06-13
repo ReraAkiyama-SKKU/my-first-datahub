@@ -375,7 +375,7 @@ if st.button("Add Memory"):
             "url": uploaded_file,
             "caption": caption_input,
             "category": category_input,
-            "event": event_input,
+            "location": location_input,
             "date": "2026",
             "description": "Uploaded by the user.",
         })
