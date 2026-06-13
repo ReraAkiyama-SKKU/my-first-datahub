@@ -315,6 +315,8 @@ if "selected_category" not in st.session_state:
 if "selected_photo_id" not in st.session_state:
     st.session_state.selected_photo_id = None
 
+if "favorites" not in st.session_state:
+    st.session_state.favorites = []
 
 # ─────────────────────────────────────────────
 # HERO SECTION
@@ -370,6 +372,8 @@ for i, category in enumerate(ALL_CATEGORIES):
 # Show which filter is active
 st.caption(f"Showing: **{st.session_state.selected_category}**")
 
+show_favorites = st.checkbox("⭐ Show Favorites Only")
+
 st.markdown('<hr class="thin-rule">', unsafe_allow_html=True)
 
 # ── Filter photos by selected category ──
@@ -385,6 +389,12 @@ if selected_location != "All":
     filtered = [
         p for p in filtered
         if p["location"] == selected_location
+    ]
+
+if show_favorites:
+    filtered = [
+        p for p in filtered
+        if p["id"] in st.session_state.favorites
     ]
 
 # ── Render 3-column photo grid ──
@@ -416,6 +426,10 @@ else:
                 # "View" button — clicking stores this photo's id in session state
                 if st.button("View ↗", key=f"view_{photo['id']}"):
                     st.session_state.selected_photo_id = photo["id"]
+                # Favorite button
+                if st.button("⭐ Favorite", key=f"fav_{photo['id']}"):
+                    if photo["id"] not in st.session_state.favorites:
+                        st.session_state.favorites.append(photo["id"])
 
 
 # ─────────────────────────────────────────────
