@@ -288,7 +288,7 @@ PHOTOS = [
     "description": "A traditional restaurant in Enoshima surrounded by soft sunlight through trees, creating a calm summer atmosphere.",
     },
     {
-    "id": 7,
+    "id": 8,
     "url": "fall_skku.jpeg",
     "caption": "Golden Autumn at Sungkyunkwan",
     "category": "Nature",
