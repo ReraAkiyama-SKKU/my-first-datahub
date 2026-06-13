@@ -479,7 +479,7 @@ f st.session_state.selected_photo_id is not None:
     selected = next(
         (p for p in all_photos if p["id"] == st.session_state.selected_photo_id),
         None
-    )
+        )
 
     if selected:
         st.markdown('<hr class="thin-rule">', unsafe_allow_html=True)
