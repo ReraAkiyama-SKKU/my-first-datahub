@@ -293,7 +293,7 @@ PHOTOS = [
     "url": "fall_korea1.jpeg",
     "caption": "A Stroll Down Memory Lane",
     "category": "Mood",
-    "location": "National Folk Museum of Korea",
+    "location": "Korea",
     "date": "2025-09-15",
     "description": "A retro street inside the National Folk Museum of Korea, filled with old-fashioned shops and nostalgic atmosphere like a traditional candy store."
     },
@@ -302,7 +302,7 @@ PHOTOS = [
     "url": "fall_skku.jpeg",
     "caption": "Golden Autumn at Sungkyunkwan",
     "category": "Nature",
-    "location": "Sungkyunkwan University",
+    "location": "Korea",
     "date": "2025-11-02",
     "description": "Golden ginkgo trees glowing in the autumn sunlight at Sungkyunkwan University, creating a peaceful and timeless atmosphere."
     }
