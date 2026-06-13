@@ -5,6 +5,9 @@ Author: Rera Akiyama
 """
 
 import streamlit as st
+import json
+
+DATA_FILE = "user_photos.json"
 
 # ─────────────────────────────────────────────
 # PAGE CONFIGURATION
@@ -233,6 +236,13 @@ st.markdown("""
 # Fields: id, url, caption, category, description
 # ─────────────────────────────────────────────
 PHOTOS = [
+    DATA_FILE = "user_photos.json"
+
+if os.path.exists(DATA_FILE):
+    with open(DATA_FILE, "r") as f:
+        saved_photos = json.load(f)
+else:
+    saved_photos = []
     {
         "id": 1,
         "url": "Japan.JPG",
@@ -307,7 +317,7 @@ if "selected_photo_id" not in st.session_state:
     st.session_state.selected_photo_id = None
 
 if "user_photos" not in st.session_state:
-    st.session_state.user_photos = []
+    st.session_state.user_photos = saved_photos
 
 if "favorites" not in st.session_state:
     st.session_state.favorites = []
@@ -370,6 +380,8 @@ if st.button("Add Memory"):
             "date": "2026",
             "description": "Uploaded by the user.",
         })
+        with open(DATA_FILE, "w") as f:
+    json.dump(st.session_state.user_photos, f)
         st.success("Memory added successfully!")
         
 st.markdown('<div class="section-label">Gallery</div>', unsafe_allow_html=True)
