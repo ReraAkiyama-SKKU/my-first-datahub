@@ -264,7 +264,7 @@ PHOTOS = [
     "id": 4,
     "url": "Jeongseon3.jpeg",
     "caption": "A Curious Encounter",
-    "category": "Travel",
+    "category": "Nature",
     "location": "Jeongseon Trip",
     "date": "2025-07-04",
     "description": "A small encounter with a curious cat became one of the warmest memories from the trip.",
