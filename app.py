@@ -6,6 +6,7 @@ Author: Rera Akiyama
 
 import streamlit as st
 import json
+import os
 
 DATA_FILE = "user_photos.json"
 
@@ -235,14 +236,22 @@ st.markdown("""
 # Each photo uses a free Unsplash image.
 # Fields: id, url, caption, category, description
 # ─────────────────────────────────────────────
-PHOTOS = [
-    DATA_FILE = "user_photos.json"
+import streamlit as st
+import json
+import os
+
+DATA_FILE = "user_photos.json"
 
 if os.path.exists(DATA_FILE):
     with open(DATA_FILE, "r") as f:
         saved_photos = json.load(f)
 else:
     saved_photos = []
+
+# PAGE CONFIG
+st.set_page_config(...)
+
+PHOTOS = [
     {
         "id": 1,
         "url": "Japan.JPG",
@@ -381,7 +390,7 @@ if st.button("Add Memory"):
             "description": "Uploaded by the user.",
         })
         with open(DATA_FILE, "w") as f:
-    json.dump(st.session_state.user_photos, f)
+            json.dump(st.session_state.user_photos, f)
         st.success("Memory added successfully!")
         
 st.markdown('<div class="section-label">Gallery</div>', unsafe_allow_html=True)
