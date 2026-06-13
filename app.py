@@ -324,6 +324,24 @@ PHOTOS = [
     "date": "2026-10-23",
     "description": "A day time view of Seoul city lights seen from Naksan Park, showing the quiet contrast between nature and the glowing city."
     },
+    {
+    "id": 11,
+    "url": "Disney_Walt_Castle.jpg",
+    "caption": "IMG_3250.JPG",
+    "category": "Travel",
+    "location": "Disneyland",
+    "date": "2025-8-11",
+    "description": "A daytime view of the Walt Disney statue in front of Cinderella Castle, capturing the iconic symbol of Disney magic and imagination."
+    },
+    {
+    "id": 12,
+    "url": "IMG3177.jpeg",
+    "caption": "Whirl of Fantasyland",
+    "category": "Travel",
+    "location": "Disneyland",
+    "date": "2024-12-17",
+    "description": "A colorful scene from Fantasyland featuring the Alice in Wonderland teacups and whimsical atmosphere of Tokyo Disneyland."
+    },
 ]
 # All category options including "All"
 ALL_CATEGORIES = ["All", "Daily Life", "Travel", "Nature", "Mood"]
