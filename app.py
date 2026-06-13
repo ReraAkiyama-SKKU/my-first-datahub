@@ -335,7 +335,7 @@ PHOTOS = [
     },
     {
     "id": 12,
-    "url": "IMG3177.jpeg",
+    "url": "IMG_3177.jpeg",
     "caption": "Whirl of Fantasyland",
     "category": "Travel",
     "location": "Disneyland",
